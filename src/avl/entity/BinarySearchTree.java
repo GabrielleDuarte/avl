@@ -214,4 +214,25 @@ public class BinarySearchTree {
 			}
 		}
 	}
+	
+	public void leftRotation(Node node) {
+		Node nodeAuxOriginalDad = node;
+		Node nodeAuxOriginalChild = node.getRight();
+		Node t2 = node.getRight().getLeft();
+			
+		node = nodeAuxOriginalChild;
+		node.setLeft(nodeAuxOriginalDad);
+		node.getLeft().setRight(t2);
+	}
+	
+	public void rightRotation(Node node) {
+		Node nodeAuxOriginalDad = node;
+		Node nodeAuxOriginalChild = node.getLeft();
+		Node t2 = node.getLeft().getRight();
+		
+		node = nodeAuxOriginalChild;
+		node.setRight(nodeAuxOriginalDad);
+		node.getRight().setLeft(t2);
+	}
+	
 }
